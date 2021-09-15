@@ -6,7 +6,7 @@
     git_url: git@github.com:termlen0/resource-modules.git
     git_key: "{{ lookup('file', secret_key) }}"
     git_branch: master
-    git_repo_path: " "
+    #git_repo_path: " "
 
   tasks:
 

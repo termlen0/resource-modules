@@ -5,7 +5,7 @@
   register: ios_interfaces
 
 - debug:
-    msg: "{{ ios_interfaces | to_nice_yaml }}"
+    msg: "{{ ios_interfaces }}"
 
 - name: Gather IOS interface
   cisco.ios.ios_l2_interfaces:
@@ -13,7 +13,7 @@
   register: ios_l2interfaces
 
 - debug:
-    msg: "{{ ios_l2interfaces | to_nice_yaml }}"
+    msg: "{{ ios_l2interfaces }}"
 
 - name: Gather IOS interface
   cisco.ios.ios_l3_interfaces:
@@ -21,4 +21,4 @@
   register: ios_l3interfaces
 
 - debug:
-    msg: "{{ ios_l3interfaces | to_nice_yaml }}"
+    msg: "{{ ios_l3interfaces }}"

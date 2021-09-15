@@ -5,7 +5,7 @@
   register: junos_interfaces
 
 - debug:
-    msg: "{{ junos_interfaces | to_nice_yaml }}"
+    msg: "{{ junos_interfaces  }}"
 
 - name: Gather JUNOS interface
   junipernetworks.junos.junos_l2_interfaces:
@@ -13,7 +13,7 @@
   register: junos_l2interfaces
 
 - debug:
-    msg: "{{ junos_l2interfaces | to_nice_yaml }}"
+    msg: "{{ junos_l2interfaces  }}"
 
 - name: Gather JUNOS interface
   junipernetworks.junos.junos_l3_interfaces:
@@ -21,4 +21,4 @@
   register: junos_l3interfaces
 
 - debug:
-    msg: "{{ junos_l3interfaces | to_nice_yaml }}"
+    msg: "{{ junos_l3interfaces  }}"

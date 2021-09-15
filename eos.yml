@@ -5,7 +5,7 @@
   register: eos_interfaces
 
 - debug:
-    msg: "{{ eos_interfaces | to_nice_yaml }}"
+    msg: "{{ eos_interfaces  }}"
 
 - name: Gather EOS interface
   arista.eos.eos_l2_interfaces:
@@ -13,7 +13,7 @@
   register: eos_l2interfaces
 
 - debug:
-    msg: "{{ eos_l2interfaces | to_nice_yaml }}"
+    msg: "{{ eos_l2interfaces  }}"
 
 - name: Gather EOS interface
   arista.eos.eos_l3_interfaces:
@@ -21,4 +21,4 @@
   register: eos_l3interfaces
 
 - debug:
-    msg: "{{ eos_l3interfaces | to_nice_yaml }}"
+    msg: "{{ eos_l3interfaces  }}"

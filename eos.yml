@@ -6,6 +6,7 @@
 
 - debug:
     msg: "{{ eos_interfaces  }}"
+    verbosity: 1
 
 - name: Gather EOS interface
   arista.eos.eos_l2_interfaces:
@@ -14,6 +15,7 @@
 
 - debug:
     msg: "{{ eos_l2interfaces  }}"
+    verbosity: 1
 
 - name: Gather EOS interface
   arista.eos.eos_l3_interfaces:
@@ -22,3 +24,4 @@
 
 - debug:
     msg: "{{ eos_l3interfaces  }}"
+    verbosity: 1

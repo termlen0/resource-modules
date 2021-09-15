@@ -6,6 +6,7 @@
 
 - debug:
     msg: "{{ junos_interfaces  }}"
+    verbosity: 1
 
 - name: Gather JUNOS interface
   junipernetworks.junos.junos_l2_interfaces:
@@ -14,6 +15,7 @@
 
 - debug:
     msg: "{{ junos_l2interfaces  }}"
+    verbosity: 1
 
 - name: Gather JUNOS interface
   junipernetworks.junos.junos_l3_interfaces:
@@ -22,3 +24,4 @@
 
 - debug:
     msg: "{{ junos_l3interfaces  }}"
+    verbosity: 1

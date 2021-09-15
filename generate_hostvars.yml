@@ -2,8 +2,23 @@
 - name: Mulitvendor data models
   hosts: all
   gather_facts: no
+  vars:
+    git_url: git@github.com:termlen0/resource-modules.git
+    git_key: "{{ lookup('file', secret_key) }}"
+    git_branch: master
+    git_repo_path: " "
 
   tasks:
+
+     - name: git pull
+      include_role:
+        name: ansible-git
+        tasks_from: pull
+
+    - name: remove files
+      file:
+        path: "{{ playbook_dir }}/host_vars/{{inventory_hostname}}/*.yml"
+        state: absent
 
     - name: Gather interface data model for all
       include_tasks: "{{ ansible_network_os }}.yml"
@@ -43,3 +58,8 @@
         state: present
         insertbefore: BOF
         line: "l3_interfaces:"
+
+    - name: Upload latest report
+      include_role:
+        name: ansible-git
+        tasks_from: push

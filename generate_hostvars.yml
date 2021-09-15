@@ -13,12 +13,12 @@
         content: "{{ hostvars[inventory_hostname][ansible_network_os +  '_interfaces'].gathered | to_nice_yaml }}"
         dest: "{{ playbook_dir }}/host_vars/{{ inventory_hostname }}/{{ ansible_network_os }}_interfaces.yml"
 
-     - name: Add Dictionary key for interfaces
-      lineinfile:
-        path: "{{ playbook_dir }}/host_vars/{{ inventory_hostname }}/{{ ansible_network_os }}_interfaces.yml"
-        state: present
-        insertbefore: BOF
-        line: "interfaces:"
+    - name: Add Dictionary key for interfaces
+     lineinfile:
+       path: "{{ playbook_dir }}/host_vars/{{ inventory_hostname }}/{{ ansible_network_os }}_interfaces.yml"
+       state: present
+       insertbefore: BOF
+       line: "interfaces:"
 
     - name: Store l2 interface data as host_vars
      copy:

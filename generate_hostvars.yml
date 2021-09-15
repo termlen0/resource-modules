@@ -10,7 +10,7 @@
 
   tasks:
 
-     - name: git pull
+    - name: git pull
       include_role:
         name: ansible-git
         tasks_from: pull

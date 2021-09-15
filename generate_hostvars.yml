@@ -20,26 +20,26 @@
         insertbefore: BOF
         line: "interfaces:"
 
-     - name: Store l2 interface data as host_vars
-      copy:
-        content: "{{ hostvars[inventory_hostname][ansible_network_os +  '_l2_interfaces'].gathered | to_nice_yaml }}"
-        dest: "{{ playbook_dir }}/host_vars/{{ inventory_hostname }}/{{ ansible_network_os }}_l2_interfaces.yml"
+    - name: Store l2 interface data as host_vars
+     copy:
+       content: "{{ hostvars[inventory_hostname][ansible_network_os +  '_l2_interfaces'].gathered | to_nice_yaml }}"
+       dest: "{{ playbook_dir }}/host_vars/{{ inventory_hostname }}/{{ ansible_network_os }}_l2_interfaces.yml"
 
-     - name: Add Dictionary key for L2interfaces
-      lineinfile:
-        path: "{{ playbook_dir }}/host_vars/{{ inventory_hostname }}/{{ ansible_network_os }}_l2_interfaces.yml"
-        state: present
-        insertbefore: BOF
-        line: "l2_interfaces:"
+    - name: Add Dictionary key for L2interfaces
+     lineinfile:
+       path: "{{ playbook_dir }}/host_vars/{{ inventory_hostname }}/{{ ansible_network_os }}_l2_interfaces.yml"
+       state: present
+       insertbefore: BOF
+       line: "l2_interfaces:"
 
-     - name: Store l3 interface data as host_vars
-      copy:
-        content: "{{ hostvars[inventory_hostname][ansible_network_os +  '_l3_interfaces'].gathered | to_nice_yaml }}"
-        dest: "{{ playbook_dir }}/host_vars/{{ inventory_hostname }}/{{ ansible_network_os }}_l3_interfaces.yml"
+    - name: Store l3 interface data as host_vars
+     copy:
+       content: "{{ hostvars[inventory_hostname][ansible_network_os +  '_l3_interfaces'].gathered | to_nice_yaml }}"
+       dest: "{{ playbook_dir }}/host_vars/{{ inventory_hostname }}/{{ ansible_network_os }}_l3_interfaces.yml"
 
-     - name: Add Dictionary key for L2interfaces
-      lineinfile:
-        path: "{{ playbook_dir }}/host_vars/{{ inventory_hostname }}/{{ ansible_network_os }}_l3_interfaces.yml"
-        state: present
-        insertbefore: BOF
-        line: "l3_interfaces:"
+    - name: Add Dictionary key for L2interfaces
+     lineinfile:
+       path: "{{ playbook_dir }}/host_vars/{{ inventory_hostname }}/{{ ansible_network_os }}_l3_interfaces.yml"
+       state: present
+       insertbefore: BOF
+       line: "l3_interfaces:"

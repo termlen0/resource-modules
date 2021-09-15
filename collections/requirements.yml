@@ -1,0 +1,10 @@
+---
+collections:
+  - name: termlen0.caretaker
+    source: https://galaxy.ansible.com
+  - name: arista.eos
+    source: https://galaxy.ansible.com
+  - name: cisco.ios
+    source: https://galaxy.ansible.com
+  - name: junipernetworks.junos
+    source: https://galaxy.ansible.com

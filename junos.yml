@@ -1,0 +1,24 @@
+---
+- name: Gather JUNOS interface
+  junipernetworks.junos.junos_interfaces:
+    state: gathered
+  register: junos_interfaces
+
+- debug:
+    msg: "{{ junos_interfaces | to_nice_yaml }}"
+
+- name: Gather JUNOS interface
+  junipernetworks.junos.junos_l2_interfaces:
+    state: gathered
+  register: junos_l2interfaces
+
+- debug:
+    msg: "{{ junos_l2interfaces | to_nice_yaml }}"
+
+- name: Gather JUNOS interface
+  junipernetworks.junos.junos_l3_interfaces:
+    state: gathered
+  register: junos_l3interfaces
+
+- debug:
+    msg: "{{ junos_l3interfaces | to_nice_yaml }}"

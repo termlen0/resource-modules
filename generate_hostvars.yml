@@ -66,7 +66,6 @@
             insertbefore: BOF
             line: "l3_interfaces:"
       delegate_to: localhost
-      become: yes
       when: ansible_network_os is defined
 
 - name: Update Git

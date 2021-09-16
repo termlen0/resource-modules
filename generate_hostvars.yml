@@ -37,7 +37,7 @@
 
         - name: Add Dictionary key for interfaces
           lineinfile:
-            path: "{{ playbook_dir }}/host_vars/{{ inventory_hostname }}/{{ ansible_network_os }}_interfaces.yml"
+            path: "{{ playbook_dir }}/resource-modules/host_vars/{{ inventory_hostname }}/{{ ansible_network_os }}_interfaces.yml"
             state: present
             insertbefore: BOF
             line: "interfaces:"

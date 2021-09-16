@@ -20,12 +20,13 @@
         state: absent
 
 - name: Mulitvendor data models
-  hosts: rtr1,rtr2,rtr3,rtr4
+  hosts: all
   gather_facts: no
 
   tasks:
     - name: Gather interface data model for all
       include_tasks: "{{ ansible_network_os }}.yml"
+      when: ansible_network_os is defined
 
     - name: Store interface data as host_vars
       copy:
@@ -43,6 +44,8 @@
       copy:
         content: "{{ hostvars[inventory_hostname][ansible_network_os +  '_l2interfaces'].gathered | to_nice_yaml }}"
         dest: "{{ playbook_dir }}/resource-modules/host_vars/{{ inventory_hostname }}/{{ ansible_network_os }}_l2_interfaces.yml"
+      delegate_to: localhost
+      become: yes
 
     - name: Add Dictionary key for L2interfaces
       lineinfile:
@@ -50,11 +53,15 @@
        state: present
        insertbefore: BOF
        line: "l2_interfaces:"
+      delegate_to: localhost
+      become: yes
 
     - name: Store l3 interface data as host_vars
       copy:
         content: "{{ hostvars[inventory_hostname][ansible_network_os +  '_l3interfaces'].gathered | to_nice_yaml }}"
         dest: "{{ playbook_dir }}/resource-modules/host_vars/{{ inventory_hostname }}/{{ ansible_network_os }}_l3_interfaces.yml"
+      delegate_to: localhost
+      become: yes
 
     - name: Add Dictionary key for L2interfaces
       lineinfile:
@@ -62,6 +69,8 @@
         state: present
         insertbefore: BOF
         line: "l3_interfaces:"
+      delegate_to: localhost
+      become: yes
 
 - name: Update Git
   hosts: ansible-1

@@ -1,6 +1,6 @@
 ---
 - name: Initialize Git
-  hosts: localhost
+  hosts: ansible-1
   gather_facts: no
   vars:
     git_url: git@github.com:termlen0/resource-modules.git
@@ -19,7 +19,7 @@
         state: absent
 
 - name: Mulitvendor data models
-  hosts: all
+  hosts: rtr1,rtr2,rtr3,rtr4
   gather_facts: no
 
   tasks:
@@ -63,7 +63,7 @@
         line: "l3_interfaces:"
 
 - name: Update Git
-  hosts: localhost
+  hosts: ansible-1
   gather_facts: no
   vars:
     git_url: git@github.com:termlen0/resource-modules.git

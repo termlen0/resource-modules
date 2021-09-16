@@ -1,15 +1,13 @@
 ---
-- name: Mulitvendor data models
-  hosts: all
+- name: Initialize Git
+  hosts: localhost
   gather_facts: no
   vars:
     git_url: git@github.com:termlen0/resource-modules.git
     git_key: "{{ lookup('file', secret_key) }}"
     git_branch: master
-    #git_repo_path: " "
 
   tasks:
-
     - name: git pull
       include_role:
         name: ansible-git
@@ -17,16 +15,21 @@
 
     - name: remove files
       file:
-        path: "{{ playbook_dir }}/host_vars/{{inventory_hostname}}/*.yml"
+        path: "{{ playbook_dir }}/resource-modules/host_vars/*"
         state: absent
 
+- name: Mulitvendor data models
+  hosts: all
+  gather_facts: no
+
+  tasks:
     - name: Gather interface data model for all
       include_tasks: "{{ ansible_network_os }}.yml"
 
     - name: Store interface data as host_vars
       copy:
         content: "{{ hostvars[inventory_hostname][ansible_network_os +  '_interfaces'].gathered | to_nice_yaml }}"
-        dest: "{{ playbook_dir }}/host_vars/{{ inventory_hostname }}/{{ ansible_network_os }}_interfaces.yml"
+        dest: "{{ playbook_dir }}/resource-modules/host_vars/{{ inventory_hostname }}/{{ ansible_network_os }}_interfaces.yml"
 
     - name: Add Dictionary key for interfaces
       lineinfile:
@@ -38,11 +41,11 @@
     - name: Store l2 interface data as host_vars
       copy:
         content: "{{ hostvars[inventory_hostname][ansible_network_os +  '_l2interfaces'].gathered | to_nice_yaml }}"
-        dest: "{{ playbook_dir }}/host_vars/{{ inventory_hostname }}/{{ ansible_network_os }}_l2_interfaces.yml"
+        dest: "{{ playbook_dir }}/resource-modules/host_vars/{{ inventory_hostname }}/{{ ansible_network_os }}_l2_interfaces.yml"
 
     - name: Add Dictionary key for L2interfaces
       lineinfile:
-       path: "{{ playbook_dir }}/host_vars/{{ inventory_hostname }}/{{ ansible_network_os }}_l2_interfaces.yml"
+       path: "{{ playbook_dir }}/resource-modules/host_vars/{{ inventory_hostname }}/{{ ansible_network_os }}_l2_interfaces.yml"
        state: present
        insertbefore: BOF
        line: "l2_interfaces:"
@@ -50,16 +53,26 @@
     - name: Store l3 interface data as host_vars
       copy:
         content: "{{ hostvars[inventory_hostname][ansible_network_os +  '_l3interfaces'].gathered | to_nice_yaml }}"
-        dest: "{{ playbook_dir }}/host_vars/{{ inventory_hostname }}/{{ ansible_network_os }}_l3_interfaces.yml"
+        dest: "{{ playbook_dir }}/resource-modules/host_vars/{{ inventory_hostname }}/{{ ansible_network_os }}_l3_interfaces.yml"
 
     - name: Add Dictionary key for L2interfaces
       lineinfile:
-        path: "{{ playbook_dir }}/host_vars/{{ inventory_hostname }}/{{ ansible_network_os }}_l3_interfaces.yml"
+        path: "{{ playbook_dir }}/resource-modules/host_vars/{{ inventory_hostname }}/{{ ansible_network_os }}_l3_interfaces.yml"
         state: present
         insertbefore: BOF
         line: "l3_interfaces:"
 
-    - name: Upload latest report
+- name: Update Git
+  hosts: localhost
+  gather_facts: no
+  vars:
+    git_url: git@github.com:termlen0/resource-modules.git
+    git_key: "{{ lookup('file', secret_key) }}"
+    git_branch: master
+
+  tasks:
+
+    - name: Update SoT
       include_role:
         name: ansible-git
         tasks_from: push

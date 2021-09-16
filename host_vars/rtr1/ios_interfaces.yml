@@ -1,0 +1,10 @@
+interfaces:
+-   enabled: true
+    name: loopback0
+-   enabled: true
+    mtu: 1476
+    name: Tunnel0
+-   enabled: true
+    name: Tunnel1
+-   enabled: true
+    name: GigabitEthernet1

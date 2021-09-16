@@ -2,6 +2,7 @@
 - name: Initialize Git
   hosts: ansible-1
   gather_facts: no
+  become: yes
   vars:
     git_url: git@github.com:termlen0/resource-modules.git
     git_key: "{{ lookup('file', secret_key) }}"
@@ -65,6 +66,7 @@
 - name: Update Git
   hosts: ansible-1
   gather_facts: no
+  become: yes
   vars:
     git_url: git@github.com:termlen0/resource-modules.git
     git_key: "{{ lookup('file', secret_key) }}"

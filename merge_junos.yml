@@ -4,11 +4,6 @@
     state: merged
     config: "{{ interfaces }}"
 
-- name: Merge L2 interface configuration
-  junipernetworks.junos.junos_l2_interfaces:
-    state: merged
-    config: "{{ l2_interfaces }}"
-
 - name: Merge L3 interface configuration
   junipernetworks.junos.junos_l3_interfaces:
     config: "{{ l3_interfaces }}"

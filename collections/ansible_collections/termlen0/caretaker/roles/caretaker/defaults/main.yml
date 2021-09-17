@@ -1,0 +1,3 @@
+sot_repo: git@github.com:termlen0/test-github-push.git
+running: "/running_configs/{{ inventory_hostname }}/running.cfg"
+archived: "/archived_configs/{{ inventory_hostname }}/config/running.cfg"

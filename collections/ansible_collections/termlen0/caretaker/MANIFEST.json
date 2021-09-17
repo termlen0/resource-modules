@@ -1,0 +1,36 @@
+{
+ "collection_info": {
+  "namespace": "termlen0",
+  "name": "caretaker",
+  "version": "1.0.16",
+  "authors": [
+   "Ajay Chenampara <termlen0@redhat.com>"
+  ],
+  "readme": "README.md",
+  "tags": [
+   "ios",
+   "eos",
+   "network",
+   "gitops",
+   "netdevops"
+  ],
+  "description": "Caretaker detects OOB config changes prior to GitOps push",
+  "license": [
+   "GPL-3.0-or-later"
+  ],
+  "license_file": null,
+  "dependencies": {},
+  "repository": "https://github.com/termlen0/caretaker_collection",
+  "documentation": "https://termlen0.github.io/2020/11/28/observations/",
+  "homepage": "https://termlen0.github.io/2020/11/28/observations/",
+  "issues": "https://github.com/termlen0/caretaker_collection/issue/tracker"
+ },
+ "file_manifest_file": {
+  "name": "FILES.json",
+  "ftype": "file",
+  "chksum_type": "sha256",
+  "chksum_sha256": "0053086e420de84e9af3e8031e23e22bc47ac3393096cd955d650eda44297318",
+  "format": 1
+ },
+ "format": 1
+}

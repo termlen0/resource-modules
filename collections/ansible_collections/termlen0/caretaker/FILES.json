@@ -1,0 +1,173 @@
+{
+ "files": [
+  {
+   "name": ".",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "plugins",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "plugins/README.md",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "c82ee692702ec1dd604cdbc38ff252114e5204e1b0627045a66c9451e7a918ac",
+   "format": 1
+  },
+  {
+   "name": "plugins/modules",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "plugins/modules/git_push.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "7683f42c4ceb7ca635e213b1b09012fa419ee359d0a0095ca860bc9846b611e4",
+   "format": 1
+  },
+  {
+   "name": "plugins/modules/git_commit.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "28f69c68502823306cce10d5c03dc8a3052472ddf6ff37ab8f440c083191b619",
+   "format": 1
+  },
+  {
+   "name": "plugins/modules/git_checkout.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "337ab4ea71c153aa895a8709cabe2920ce53e0928b0bb441d3372e585bbf9aed",
+   "format": 1
+  },
+  {
+   "name": "roles",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/caretaker",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/caretaker/tasks",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/caretaker/tasks/eos.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "ba6c150fed54b086020b9ba1d167e16f2b014798314231301f3014e88dd2bd66",
+   "format": 1
+  },
+  {
+   "name": "roles/caretaker/tasks/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "167e651317f4d0d514303d3780eeec9e6f31aa053a1b1fc8108caa1e7071fb08",
+   "format": 1
+  },
+  {
+   "name": "roles/caretaker/README.md",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "786baa9c1dc9c6c8b1062591d3844ac5796738a0138531d2fd2887d98c56f3c8",
+   "format": 1
+  },
+  {
+   "name": "roles/caretaker/defaults",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/caretaker/defaults/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "932c5e6ba8846f50705ea7408d5d2724cd0f61aa99646edb96e8fcf9c7d3772b",
+   "format": 1
+  },
+  {
+   "name": "roles/caretaker/files",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "playbooks",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "playbooks/junos.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "8bb0e31c36a5171b899e79c3a4ece4b8fd7a33e02133c1f20dd3982c60e7bf82",
+   "format": 1
+  },
+  {
+   "name": "playbooks/ios.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "7ce16d71aacb3b5833a9feb7798c9e220c75615b4568955b484b92b96ed05a28",
+   "format": 1
+  },
+  {
+   "name": "playbooks/eos.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "c8bafbea4e5b49e566ecf167ef402e6dffeb791cc17b6a08633e05b573cba73c",
+   "format": 1
+  },
+  {
+   "name": "playbooks/sync_to_devices.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "c1221ac34e5b948acc7a1662d3f66c0d80d73b785a1669ca55038e9d8ff100d7",
+   "format": 1
+  },
+  {
+   "name": "docs",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "README.md",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "f5c943cf1391defaeddd88ee7cceb8c90544a030515b2f0da47c7cd57ccd56b4",
+   "format": 1
+  },
+  {
+   "name": ".gitignore",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "1b3fb23b36939d627dfb4c4621709177c37defb3276434b4d36e2ed89e79dee2",
+   "format": 1
+  }
+ ],
+ "format": 1
+}

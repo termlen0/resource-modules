@@ -1,0 +1,35 @@
+{
+ "collection_info": {
+  "namespace": "arista",
+  "name": "eos",
+  "version": "3.0.0",
+  "authors": [
+   "Ansible Network Community (ansible-network)"
+  ],
+  "readme": "README.md",
+  "tags": [
+   "arista",
+   "eos",
+   "networking",
+   "eapi"
+  ],
+  "description": "Ansible Network Collection for Arista EOS devices.",
+  "license": [],
+  "license_file": "LICENSE",
+  "dependencies": {
+   "ansible.netcommon": ">=2.0.1"
+  },
+  "repository": "https://github.com/ansible-collections/arista.eos",
+  "documentation": null,
+  "homepage": null,
+  "issues": null
+ },
+ "file_manifest_file": {
+  "name": "FILES.json",
+  "ftype": "file",
+  "chksum_type": "sha256",
+  "chksum_sha256": "a0a549ff05b261478209956f10c70dc22297b3db6b8e598f8392e7505af37a12",
+  "format": 1
+ },
+ "format": 1
+}

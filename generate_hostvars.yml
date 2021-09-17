@@ -54,6 +54,7 @@
            state: present
            insertbefore: BOF
            line: "l2_interfaces:"
+          when:  hostvars[inventory_hostname][ansible_network_os +  '_l2interfaces'].gathered
 
         - name: Store l3 interface data as host_vars
           copy:

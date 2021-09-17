@@ -7,7 +7,7 @@ l3_interfaces:
     -   address: 192.168.1.1/32
     name: Loopback0
     ipv6:
-      - address: fc00::100/64
+      - address: fc00::101/64
 -   ipv4:
     -   address: 10.100.100.1/24
     name: Tunnel0

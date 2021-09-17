@@ -1,0 +1,10 @@
+---
+- name: Merge interface configuration
+  junipernetworks.junos.junos_interfaces:
+    state: replaced
+    config: "{{ interfaces }}"
+
+- name: Merge L3 interface configuration
+  junipernetworks.junos.junos_l3_interfaces:
+    config: "{{ l3_interfaces }}"
+    state: replaced

@@ -46,6 +46,7 @@
           copy:
             content: "{{ hostvars[inventory_hostname][ansible_network_os +  '_l2interfaces'].gathered | to_nice_yaml }}"
             dest: "{{ playbook_dir }}/resource-modules/host_vars/{{ inventory_hostname }}/{{ ansible_network_os }}_l2_interfaces.yml"
+          when:  hostvars[inventory_hostname][ansible_network_os +  '_l2interfaces'].gathered
 
         - name: Add Dictionary key for L2interfaces
           lineinfile:

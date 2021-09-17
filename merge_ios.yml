@@ -1,0 +1,15 @@
+---
+- name: Merge interface configuration
+  cisco.ios.ios_interfaces:
+    state: merged
+    config: "{{ interfaces }}"
+
+- name: Merge L2 interface configuration
+  cisco.ios.ios_l2_interfaces:
+    state: merged
+    config: "{{ l2_interfaces }}"
+
+- name: Merge L3 interface configuration
+  cisco.ios.ios_l3_interfaces:
+    config: "{{ l3_interfaces }}"
+    state: merged

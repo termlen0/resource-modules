@@ -9,5 +9,8 @@ l3_interfaces:
     -   address: 10.10.10.10/32
     name: Loopback200
 -   ipv4:
+    -   address: 10.10.10.11/32
+    name: Loopback201   
+-   ipv4:
     -   address: 10.101.101.4/24
     name: Tunnel0

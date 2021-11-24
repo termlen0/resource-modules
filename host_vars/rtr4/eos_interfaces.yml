@@ -2,11 +2,8 @@ interfaces:
 -   enabled: true
     mode: layer3
     name: Ethernet1
--   description: Test desc
-    enabled: true
-    name: Loopback0
 -   enabled: true
-    name: Loopback200
+    name: Loopback0
 -   enabled: true
     mtu: 1394
     name: Tunnel0
